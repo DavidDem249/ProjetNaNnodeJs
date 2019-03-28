@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Express ivoire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--     <link rel="stylesheet" type="text/css" href="css/style.css">
+ -->    
+    <style type="text/css">
+    	
+		body
+		{
+			background: url("../images/.jpg");
+			background-color: #45c456;
+		}
+		.site
+		{
+			font-family: "Holtwood One SC", sans-serif;
+		}
+		.text-logo
+		{
+			font-family: "Holtwood One SC", sans-serif;
+			color: #fff;
+			text-shadow: 2px 2px #ffd301;
+			font-size: 50px;
+			padding: 40px 0px;
+			text-align: center;
+		}
+		.text-logo .glyphicon
+		{
+			color: white;
+			text-shadow: 0px 0px #ffd301;
+		}
+		.nav
+		{
+			margin-bottom: 40px;
+		}
+		.thumbnail img
+		{
+			background: #ffd301;
+		}
+		.price
+		{
+			background: #5cb85c;
+			box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+			-moz-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+			-webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+			color: #fff;
+			text-shadow: 2px 2px #333;
+			position: absolute;
+			right: 6px;
+			top: 20px;
+			padding: 5px 10px;
+			font-size: 20px;
+			border-radius: 3px;
+		}
+		.price:before
+		{
+			border: 4px solid transparent;
+			border-bottom: 4px solid #4a934a;
+			border-left: 4px solid #4a934a;
+			content: "";
+			position: absolute;
+			right: 1px;
+			top: -8px;
+		}
+		.caption > h4
+		{
+			color: #e7480f;
+			font-size: 20px;
+		}
+		.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
+		{
+			background: #e7480f;
+		}
+		.nav>li>a:focus, .nav>li>a:hover
+		{
+			color: #e7480f;
+			background-color: #eee;
+		}
+		.nav>li>a
+		{
+			color: #eee; 
+			font-size: 18px;
+			text-shadow: 2px 2px #333;
+		}
+		.btn-order 
+		{
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			color: #fff;
+			background-color: #e7480f;
+			text-decoration: none;
+			text-shadow: 2px 2px #333;
+		}
+		.btn-order:hover, .btn-order:focus
+		{
+			color: #fff;
+			background-color: #c13c0d;
+		}
+
+		/*ADMIN*/
+
+		.admin{
+
+			background: #fff;
+			padding: 50px;
+			border-radius: 10px;
+			
+		}
+		.help-inline{
+			color: red:;
+		}
+
+    </style>
+</head>
+<body>
+
+	<!-- inclusion du formulaire  -->
+	<% include acheter %>
+
+    <div class="container site">
+
+        <h1 class="text-logo"><!-- <span class="glyphicon glyphicon-cutlery">
+        </span> -->IVOIRE EXPRESS NUTRITION<!-- <span class="glyphicon glyphicon-cutlery"></span></ --></h1>
+        
+        <!-- La barre de navigation -->
+
+        <% include nav %>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="1">
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p1.jpg" alt="...">
+								<div  class="price">1000 FCFA</div>
+								<div class="caption">
+									<h4>Garba express avec poulet</h4>
+									<p>Atiéké avec percil, carrotte et de la viande</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p2.png" alt="...">
+								<div  class="price">400 FCFA</div>
+								<div class="caption">
+									<h4>Garba avec du vrai thon</h4>
+									<p>Bon thon accompagné de cube maggi</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p3.jpg" alt="...">
+								<div  class="price">500 FCFA</div>
+								<div class="caption">
+									<h4>Garba + alloco</h4>
+									<p>Plus Du thon et de l'alloco</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p4.jpg" alt="...">
+								<div  class="price">1500 FCFA</div>
+								<div class="caption">
+									<h4>Attiéké </h4>
+									<p>Garba des femmes avec du poisson macharon</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p5.jpg" alt="...">
+								<div class="price">800 FCFA</div>
+								<div class="caption">
+									<h4>Garba pur</h4>
+									<p>Un plat original</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+				</div>
+
+				<div class="tab-pane" id="2">
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p6.jpg" alt="...">
+								<div class="price">3000 FCFA</div>
+								<div class="caption">
+									<h4>Atiéké avec du vrai poisson</h4>
+									<p>Plat spécial a un prix très abordable</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p8.jpg" alt="...">
+								<div class="price">1600 FCFA</div>
+								<div class="caption">
+									<h4>Garba</h4>
+									<p>Plus un thon non salé</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p10.jpg" alt="...">
+								<div class="price">2000 FCFA</div>
+								<div class="caption">
+									<h4>Atiéké Classic</h4>
+									<p>Super plat à moindre coût</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p17.jpg" alt="...">
+								<div class="price">2500 FCFA</div>
+								<div class="caption">
+									<h4>Meilleure Plat</h4>
+									<p>L'un des meilleurs plat ivoirien </p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+				</div>
+
+
+				<div class="tab-pane" id="3">
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p7.jpg" alt="...">
+								<div class="price">3000 FCFA</div>
+								<div class="caption">
+									<h4>Riz</h4>
+									<p>Riz avec de la sauce gombo à moindre coût</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p9.jpg" alt="...">
+								<div class="price">5000 FCFA</div>
+								<div class="caption">
+									<h4>Salade et concombre</h4>
+									<p>Plat bien fait selon vos bésoin accompagné de la viande de poulet</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p13.jpg" alt="...">
+								<div class="price">8000 FCFA</div>
+								<div class="caption">
+									<h4>Chep</h4>
+									<p>Riz + petit poid et bien d'autre choses que vous aimez</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p16.jpg" alt="...">
+								<div class="price">10 000 FCFA</div>
+								<div class="caption">
+									<h4>Atiéké</h4>
+									<p>Atiéké avec des vraix condiments </p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p11.jpg" alt="...">
+								<div class="price">6000 FCFA</div>
+								<div class="caption">
+									<h4>Frites</h4>
+									<p>Frites + alloco à moindre coût  </p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="tab-pane active" id="4">
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p19.jpg" alt="...">
+								<div  class="price">15 000 FCFA</div>
+								<div class="caption">
+									<h4>Riz Sénégalais</h4>
+									<p>Riz + poisson avec des condiments néccéssaire</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p29.jpg" alt="...">
+								<div  class="price">8000 FCFA</div>
+								<div class="caption">
+									<h4>Riz ivoire</h4>
+									<p>Riz accompagné de la viande de poulet</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p32.png" alt="...">
+								<div  class="price">10 000 FCFA</div>
+								<div class="caption">
+									<h4>Riz sénégalais</h4>
+									<p>Riz + Plus de la viande de brousse</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p34.jpg" alt="...">
+								<div  class="price">7000 FCFA</div>
+								<div class="caption">
+									<h4>Riz express</h4>
+									<p>Plat trés delicieux à moindre prix</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/p31.jpg" alt="...">
+								<div class="price">9000 FCFA</div>
+								<div class="caption">
+									<h4>Plat ivoire</h4>
+									<p>Carrotte + poisson + haricot </p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+				</div>
+
+				<div class="tab-pane active" id="5">
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/j2.jpg" alt="...">
+								<div  class="price">1000 FCFA</div>
+								<div class="caption">
+									<h4>Jus</h4>
+									<p>Jus au cytron bien glacé</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/j1.jpg" alt="...">
+								<div  class="price">400 FCFA</div>
+								<div class="caption">
+									<h4>Jus</h4>
+									<p>Jus de fruits</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/j3.jpg" alt="...">
+								<div  class="price">500 FCFA</div>
+								<div class="caption">
+									<h4>Jus</h4>
+									<p>Jus au cytron</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/j4.jpg" alt="...">
+								<div  class="price">1000 FCFA</div>
+								<div class="caption">
+									<h4>Jus</h4>
+									<p>Jus de carrotte</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img src="images/j5.jpg" alt="...">
+								<div class="price">500 FCFA</div>
+								<div class="caption">
+									<h4>Boisson </h4>
+									<p>Boisson orangina bien glacé</p>
+									<button type="button" class="btn btn-order" role="button class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Je veux acheter</button>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+				</div>
+
+
+				<a href="/commandes/commandes"> <button type="button" class="btn btn-order" role="button" > Voir tous les commandes </button></a>
+		   </div>
+    </div>
+</body>
+</html>

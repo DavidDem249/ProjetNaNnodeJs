@@ -1,0 +1,66 @@
+	<div class="container">
+
+		<div id="mymodal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times: </button>
+						<h4 class="modal-title">Veillez indiquer les informations svp</h4>
+
+						<% if(locals.error) {%>
+						<div class="ui negative message">
+							
+							<% error %>
+						</div>
+						<% } %>
+						
+					</div>
+					<div class="modal-body">
+						<form action="" method="POST">
+
+							<div class="form-group">
+								<label>Nom :</label>
+								<input type="text" class="form-control" name="nom" required="1" />
+							</div>
+
+							<div class="form-group">
+								<label>Prenom :</label>
+								<input type="text" class="form-control" name="prenom" required="1" />
+							</div>
+
+							<div class="form-group">
+								<label>Adress :</label>
+								<input type="text" class="form-control" name="adress" required="1">
+							</div>
+
+							<div class="form-group">
+								<label>Numero :</label>
+								<input type="text" class="form-control" name="numero" required="1">
+							</div>
+
+							<div class="form-group">
+								<label>Type Commande :</label>
+								<input type="text" class="form-control" name="commande" required="1">
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary">Envoyer la commande</button>
+							</div>
+
+						</form>
+						
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">Sortir</button>
+
+					</div>
+
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
